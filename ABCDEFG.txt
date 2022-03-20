@@ -1,0 +1,9 @@
+        [HttpPost]
+        [Route("CreateBusinessAccount")]
+        [SwaggerOperation(Description = "Example {  }")]
+        public async Task<IActionResult> CreateBusinessAccount(CreateBussinessAccountDTO create)
+        {
+
+            var msg = await _IRepository.CreateBusinessAccount(create);
+            return Ok(JsonConvert.SerializeObject(msg));
+        }
